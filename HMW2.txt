@@ -1,0 +1,68 @@
+Locators xpath
+
+Example: Email field, search by ID, “ap_email”
+           
+
+Home Work:
+1- Continue, search by ID, "Continue" 
+ $x(//"id = continue")
+2- Need help link?, search by class,'a-expander-prompt'
+ $x("//span[@class='a-expander-prompt']") 
+3- Forgot your password, search by ID, "auth-fpp-link-bottom"
+4- Other issues with Sign-in link, search by ID, "ap-other-signin-issues-link"
+5- Create your Amaxon account, search by ID, id="authportal-center-section"
+6- Amazon logo, search by class, 'a-icon a-icon-logo'
+$x("//i[@class='a-icon a-icon-logo']")
+7- Privacy notice link, search by link Xpath, e, /gp/help/customer/display.html/ref=ap_desktop_footer_privacy_notice?ie=UTF8&nodeId=468496   
+or 
+$x("//a[contains(@href,'/gp/help/customer/display.html/ref=ap_desktop_footer_privacy_notice?ie')]")
+or
+ $x("//a[text()= 'Privacy Notice']")
+8- Conditions of Use link, by Xpath, 'Conditions of Use', href="/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&amp;nodeId=508088">
+or 
+      contains
+href="/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie
+or 
+ $x("//a[text()='Conditions of Use']
+
+
+Note that text can not be reliable for other languages in that case contains a,class, href or another tag name can be used such as:
+
+
+$x("//div[contains(@class,'cs-help')]//h1[text()='Conditions of Use']")
+etc.
+or entirely class or href value
+
+
+Error
+amazon element is not clickable separately using inspection arrow
+
+
+
+   
+contains
+$x("//div[contains(@class,'cs')]")
+
+needs help?
+$x("//span[@class='a-expander-prompt']")
+
+h1Conditions of use link
+$x("//div[contains(@class,'cs-help')]//h1[text()='Conditions of Use']")
+[h1]0: h1length: 1__proto__: Array(0)
+
+$x("//h1")
+[h1.a-spacing-small]0: h1.a-spacing-smalllength: 1__proto__: Array(0)
+
+$x("//h1[@class='a-spacing-small']")
+
+
+email label
+$x("//label[@for='ap_email']")
+
+amazonlogo-three ways
+$x("//i[@class='a-icon a-icon-logo']")
+
+$x("//i[@aria-label= 'Amazon']")
+
+$x("//i[@role='img']")
+
