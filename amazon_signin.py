@@ -14,6 +14,7 @@ def Click_Sign_In(context):
 def sign_verify(context):
     #context.driver.find_element(By.ID, 'continue').click()
 
-    assert 'https://www.amazon.com/ap/signin' in context.driver.current_url
+    assert 'https://www.amazon.com/ap/signin' in context.driver.current_url, f'wromg url{context.driver.current_url}'
     assert context.failed is False
-    #assert context.failed is False
+
+
