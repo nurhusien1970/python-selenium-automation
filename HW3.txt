@@ -1,0 +1,88 @@
+Find the Most Optimal Locators for Create Account(Registration) Page Elements:
+
+
+1. Amazon
+
+$$("i.a-icon.a-icon-logo")
+[i.a-icon.a-icon-logo]
+$$("div i.a-icon.a-icon-logo")
+[i.a-icon.a-icon-logo]0: i.a-icon.a-icon-logolength: 1__proto__: Array(0)
+
+2. Create Account
+$$(".a-spacing-small")---do not use as two values returned
+(2) [h1.a-spacing-small, div.a-section.a-spacing-small.a-text-center.a-size-mini] -- unreliable it may change heading
+$$("h1.a-spacing-small")
+[h1.a-spacing-small]
+$$("div h1.a-spacing-small")- best practice
+3. Your name
+$$("#ap_customer_name")
+[input#ap_customer_name.a-input-text.a-span12.auth-autofocus.auth-required-field.auth-contact-verifi…]
+$$("#ap_customer_name")
+[input#ap_customer_name.a-input-text.a-span12.auth-autofocus.auth-required-field.auth-contact-verifi…]
+
+4. Email
+$$("#ap_email")
+[input#ap_email.a-input-text.a-span12.auth-required-field.auth-require-fields-match.auth-require-ema…]
+$$("input#ap_email")
+[input#ap_email.a-input-text.a-span12.auth-required-field.auth-require-fields-match.auth-require-ema…]
+5. Password
+$$("input#ap_password")
+or just no input word
+
+6. Re-enter password
+$$("div.a-row.a-spacing-base")[3]
+7. Create your Amazon account
+$$("input#continue")
+8. Conditions of Use
+$$("a[href='/gp/help/customer/display.html/ref=ap_register_notification_condition_of_use?ie=UTF8&nodeId=508088']")
+$$("a[href*='ap_register_notification_condition_of_use']") better
+9. Privacy Notice
+$$("a[href*='ap_register_notification_privacy_notice']")
+10. Sign in
+wrong but it works, no enclosing bracket, missing closing apostrophy
+$$("a[href*='/signin")
+[a.a-link-emphasis]0: a.a-link-emphasislength: 1__proto__: Array(0)
+I do not know how.
+versus 
+$$("a[href*='/signin]")
+[]
+
+returns empty
+
+This works
+$$("a.a-link-emphasis[href*='signin']")
+[a.a-link-emphasis]
+$$("a.a-link-emphasis[href*='signin'") no closing brace works!
+[a.a-link-emphasis]
+
+
+
+
+11.password must be at least 6 characters
+$$("div.a-alert-content")[7]
+<div class=​"a-alert-content">​
+  Passwords must be at least 6 characters.
+​</div>​
+
+
+
+
+Extra attempt
+
+Your name label
+css did not give one unique value  "for"/""class attribute, empty returned
+
+$$("label.a-form-label")
+(4) [label.a-form-label, label.a-form-label, label.a-form-label, label.a-form-label]
+
+XPath did work:
+$x("//label[@for= 'ap_customer_name']")
+
+
+re-enter password
+$x("//div[@class= 'auth-require-fields-match-group']")
+(2)
+$x("//div[@class='auth-require-fields-match-group']//div[@class= 'a-row a-spacing-base']")
+(3)
+$$("div.auth-require-fields-match-group div.a-row.a-spacing-base")
+(3)
