@@ -4,6 +4,6 @@ Feature: # Customer cancel help search field
 
   Scenario: Customer enters key word in cancel orders help field
     # Enter steps here
-  Given Open Amazon Page
-    When Click on Amazon search icon
-    Then Verify search worked
+    Given open help page
+    When help search icon
+    Then cancel item worked

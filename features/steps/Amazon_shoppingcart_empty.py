@@ -1,9 +1,12 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.common.keys import Keys
+
+
 @given('Amazon Open Page logo')
 def open_amazon(context):
     context.driver.get('https://www.amazon.com/ref=nav_logo')
+
 
 @when('Click Amazon logo')
 def click_amazon_logo(context):
