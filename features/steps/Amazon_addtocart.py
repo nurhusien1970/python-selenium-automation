@@ -1,9 +1,3 @@
-from selenium.webdriver.common.by import By
-from behave import given, when, then
-from selenium.webdriver.common.keys import Keys
-from time import sleep
-
-
 @given('Amazon Open Page')
 def open_amazon(context):
     context.driver.get('https://www.amazon.com')
