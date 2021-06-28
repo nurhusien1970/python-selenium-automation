@@ -1,0 +1,20 @@
+#1 unique sets
+print(len(set('aaabbb'))==len('aaabb'))
+O(1)
+or
+unique ='abcan'
+for i in unique:
+ if unique.count(i) > 1:
+    print(False)
+ else:
+    print(True)
+O(n2)
+#2stringhalfswap
+
+str="aaaabbbb"
+str="aaaaabbbb"
+if len(str) % 2 == 0:
+    print(str[len(str)//2:len(str)] + str[0:(len(str)//2)])
+else:
+    print(str[len(str)//2+1:len(str)] + str[0:(len(str)//2+1)])
+O(2n)
