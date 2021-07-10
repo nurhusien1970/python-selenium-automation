@@ -1,0 +1,84 @@
+we can also use int(half/2)?
+half//2
+
+
+
+Hw3
+#1
+word = "string is reversed"
+word3 = list(word)
+#print(",".join(word[::-1])), not good
+word2 = []
+for i in word3:
+        word2.append(i)
+print("'".join(word))
+
+time complexty =o(n)
+
+#2
+
+
+#3
+vowels = "aeiou"
+string='word'
+vowel_count = 0
+conso_count = 0
+
+#def count_vowel_consonant(string):
+       for i in string:
+             if i in vowels:
+       	   vowel_count+=1
+       else:
+                 conso_count+=1
+print("vowel count is: ", vowel_count, "consonant count is: ", conso_count)
+
+from itertools import permutations
+a=[1,2,34,{13}]
+b=permutations(a)
+for i in b:
+    print(i)
+
+or
+
+string="ASHU"
+a=permutations(string) 
+for i in list(a): 
+   # join all the letters of the list to make a string 
+   print("".join(i)) 
+
+
+answer=[] 
+def permutation(string, i, length):   
+   if i == length:   
+        answer.append(''.join(string) )  
+   else:   
+       for j in range(i, length):   
+           string[i], string[j] = string[j], string[i]   
+ 
+          #keep increasing i by 1 till it becomes equal to 0 
+            permutation(string, i + 1, length)   
+           string[i], string[j] = string[j], string[i]   
+permutation(list(string), 0, len(string))  
+string="ABC"
+print(str(answer)) 
+
+def permutation(list1):  
+   # If the length of list=0 no permuataions possible 
+   if len(list1) == 0:  
+       return []  
+   # If the length of list=1, return that element 
+   if len(list1) == 1:  
+       return [list1]  
+   l = []  
+   for i in range(len(list1)):  
+       m = list1[i]  
+      # Extract list1[i] or m from the list. remlist1 is  
+      # remaining list  
+       remlist1 = list1[:i] + list1[i+1:]  
+      # Generating all permutations where m is first  
+      # element  
+       for p in permutation(remlist1):  
+            l.append([m] + p)  
+   return l 
+if __name__=="__main__": 
+   print(list(permutation([1,2,3,4]))) 
