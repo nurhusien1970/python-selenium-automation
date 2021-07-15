@@ -1,8 +1,9 @@
 from pages.amazon_homepage import AmazonHomepage
-from pages.order import Order
+from pages.header_order_department import Order
 from pages.verify_order_sigin import VerifyOrderSignIn
 from pages.cart_icon_page import Cart
 from pages.verify_cart_icon import CartIcon
+from pages.department_page import AllDept
 
 
 class Applications:
@@ -13,4 +14,4 @@ class Applications:
         self.sign_in_page = VerifyOrderSignIn(self.driver)
         self.cart_click_page = Cart(self.driver)
         self.cart_click_result_page = CartIcon(self.driver)
-
+        self.all_department_page = AllDept(self.driver)
